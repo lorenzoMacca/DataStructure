@@ -20,6 +20,10 @@ public:
 	T* getRootValue()const;
 	T* getValueLastElement()const;
 	bool pushBack(T* t);
+	bool pushFront(T* t);
+	T* popBack();
+	T* popFrom();
+	bool isEmpty()const;
 	Iterator<T>* getIterator();
 };
 
@@ -52,6 +56,16 @@ bool List<T>::pushBack(T* t){
 }
 
 template<class T>
+bool List<T>::pushFront(T* t){
+	if(t==0)
+		return false;
+	NodeList<T>* newNode = new NodeList<T>(t);
+	newNode->setNext(this->m_root);
+	this->m_root->setPrevious(newNode);
+	this->m_root=newNode;
+}
+
+template<class T>
 T* List<T>::getRootValue()const{
 	if(this->m_root==0)
 		return 0;
@@ -68,6 +82,33 @@ T* List<T>::getValueLastElement()const{
 template<class T>
 Iterator<T>* List<T>::getIterator(){
 	return new Iterator<T>(this->m_root);
+}
+
+template<class T>
+T* List<T>::popBack(){
+	if(this->isEmpty())
+		return 0;
+	T* valueToBeReturned=this->m_lastElement->getValue();
+	this->m_lastElement=this->m_lastElement->getPreviout();
+	if(this->m_lastElement!=0){
+		this->m_lastElement->getNext()->setPrevious(0);
+		this->m_lastElement->setNext(0);
+	}else{
+		this->m_root=0;
+	}
+	return valueToBeReturned;
+}
+
+template<class T>
+T* List<T>::popFrom(){
+	return 0;
+}
+
+template<class T>
+bool List<T>::isEmpty()const{
+	if(this->m_root==0 && this->m_lastElement==0)
+		return true;
+	return false;
 }
 
 #endif

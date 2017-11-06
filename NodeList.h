@@ -67,20 +67,14 @@ NodeList<T>* NodeList<T>::getPreviout()const{
 
 template<class T>
 bool NodeList<T>::setNext(NodeList<T>* n){
-	if(n!=0){
-		this->m_nextItem=n;
-		return true;
-	}
-	return false;
+	this->m_nextItem=n;
+	return true;
 }
 
 template<class T>
 bool NodeList<T>::setPrevious(NodeList<T>* n){
-	if(n!=0){
-			this->m_parent=n;
-			return true;
-		}
-		return false;
+	this->m_parent=n;
+	return true;
 }
 
 template<class T>
