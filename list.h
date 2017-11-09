@@ -50,7 +50,11 @@ bool List<T>::pushBack(T* t){
 		return false;
 	NodeList<T>* newNode = new NodeList<T>(t);
 	newNode->setPrevious(this->m_lastElement);
-	this->m_lastElement->setNext(newNode);
+	if(this->m_lastElement!=0){
+		this->m_lastElement->setNext(newNode);
+	}else{
+		this->m_root=newNode;
+	}
 	this->m_lastElement=newNode;
 	return true;
 }
