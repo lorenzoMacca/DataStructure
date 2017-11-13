@@ -11,7 +11,7 @@ main.o:
 		$(CC) $(CPPFLAGS) -c main.cpp
 
 clean:
-		rm -f $(PROG) *.o *.gch
+		rm -f $(PROG) *.o *.gch *~
 
 
 
