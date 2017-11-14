@@ -3,6 +3,7 @@
 
 #include "../inc/Node.h"
 #include "../inc/Object.h"
+#include "../inc/Iterator.h"
 
 class List{
 	protected:
@@ -20,7 +21,7 @@ class List{
 		Object* popBack();
 		Object* popFrom();
 		bool isEmpty()const;
-		//Iterator<T>* getIterator();
+		Iterator* getIterator();
 };
 
 #endif
