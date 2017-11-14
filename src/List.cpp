@@ -13,3 +13,17 @@ List::List(Object* o){
 List::~List(){
 	//TODO: implement distructor
 }
+
+Object* List::getFirstValue()const{
+	if(this->m_first_element != 0){
+		return this->m_first_element->getValue();
+	}
+	return 0;
+}
+
+Object* List::getValueLastElement()const{
+	if(this->m_last_element != 0){
+		return this->m_last_element->getValue();
+	}
+	return 0;
+}

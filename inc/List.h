@@ -13,7 +13,7 @@ class List{
 		List();
 		List(Object*);
 		~List();
-		Object* getRootValue()const;
+		Object* getFirstValue()const;
 		Object* getValueLastElement()const;
 		bool pushBack(Object* t);
 		bool pushFront(Object* t);

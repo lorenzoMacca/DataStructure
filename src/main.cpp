@@ -17,5 +17,11 @@ int main(){
 
 	cout << t.toString() << endl;
 	
+	List s1(&t);
+	
+	cout << s1.getFirstValue()->toString() << endl;
+	
+	cout << s1.getValueLastElement()->toString() << endl;
+	
 	return 0;
 }
