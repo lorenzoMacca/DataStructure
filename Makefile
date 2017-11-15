@@ -4,6 +4,7 @@ CPPFLAGS = -g -Wall
 LDFLAGS =
 BIN = ./bin
 OBJ = ./obj
+INC = ./inc
 
 # list of the objects which should be compiled for app
 OBJS = main.o Node.o List.o Iterator.o
@@ -32,4 +33,4 @@ $(OBJ)/Node.o: src/Node.cpp
 	$(CC) $(CPPFLAGS) -c src/Node.cpp -o $(OBJ)/Node.o
 
 clean:
-		rm -drf $(BIN) $(OBJ) *.o *.gch *~
+		rm -drf $(BIN) $(OBJ) *.o $(INC)/*.gch *~
