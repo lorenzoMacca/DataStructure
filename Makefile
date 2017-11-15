@@ -7,7 +7,11 @@ OBJ = ./obj
 INC = ./inc
 
 # list of the objects which should be compiled for app
+#
 OBJS = main.o Node.o List.o Iterator.o
+
+# list of the objects + folder obj which should be compiled for app
+#
 LIST_OBJS=$(addprefix $(OBJ)/, $(OBJS))
 
 # typing 'make' will invoke the first target entry in the file 
@@ -21,16 +25,19 @@ $(PROG) : $(LIST_OBJS)
 		$(CC) $(LDFLAGS) -o $(BIN)/$(PROG) $(LIST_OBJS)
 
 $(OBJ)/main.o: src/main.cpp 
-	$(CC) $(CPPFLAGS) -c src/main.cpp -o $(OBJ)/main.o
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ)/List.o: src/List.cpp
-	$(CC) $(CPPFLAGS) -c src/List.cpp -o $(OBJ)/List.o
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ)/Iterator.o: src/Iterator.cpp
-	$(CC) $(CPPFLAGS) -c src/Iterator.cpp -o $(OBJ)/Iterator.o
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ)/Node.o: src/Node.cpp
-	$(CC) $(CPPFLAGS) -c src/Node.cpp -o $(OBJ)/Node.o
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
 		rm -drf $(BIN) $(OBJ) *.o $(INC)/*.gch *~
+		
+# $@  is the name of the file being generated
+# $<  the first prerequisite (usually the source file)
