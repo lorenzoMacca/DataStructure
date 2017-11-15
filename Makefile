@@ -2,6 +2,7 @@ PROG = app
 CC = g++
 CPPFLAGS = -g -Wall
 LDFLAGS =
+BIN = ./bin
 OBJS = main.o Node.o List.o Iterator.o
 
 # typing 'make' will invoke the first target entry in the file 
@@ -12,7 +13,7 @@ OBJS = main.o Node.o List.o Iterator.o
 default: $(PROG)
 
 $(PROG) : $(OBJS)
-		$(CC) $(LDFLAGS) -o $(PROG) $(OBJS)
+		$(CC) $(LDFLAGS) -o $(BIN)/$(PROG) $(OBJS)
 
 main.o: src/main.cpp inc/Node.h
 	$(CC) $(CPPFLAGS) -c src/main.cpp inc/Node.h inc/TypeFoo.h
@@ -27,4 +28,4 @@ Node.o: inc/Node.h src/Node.cpp inc/Object.h
 	$(CC) $(CPPFLAGS) -c src/Node.cpp
 
 clean:
-		rm -f $(PROG) *.o *.gch *~
+		rm -drf $(BIN) *.o *.gch *~
