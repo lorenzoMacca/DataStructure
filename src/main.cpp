@@ -15,6 +15,8 @@ int main(){
 	List s;
 	
 	TypeFoo t1("t1");
+	
+	cout << endl << s.toString() <<endl;
 
 	//cout << t1.toString() << endl;
 	
@@ -40,6 +42,8 @@ int main(){
 		cout << tmp << endl;
 		++(*i);
 	}
+	
+	cout << endl << s1.toString() <<endl;
 	
 	return 0;
 }

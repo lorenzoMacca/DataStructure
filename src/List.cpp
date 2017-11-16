@@ -73,3 +73,19 @@ Object* List::popBack(){
 	}
 	return valueToBeReturned;
 }
+
+string List::toString()const{
+	if(this->isEmpty()){
+		return "[List: The List is empty]";
+	}
+	string mess = "[List: ";
+	Iterator* i = new Iterator(this->m_first_element);
+	while(i->hasNext()){
+		mess += i->getNode()->toString() + " - ";
+		++(*i);
+	}
+	mess += "]";
+	delete i;
+	return mess;
+}
+

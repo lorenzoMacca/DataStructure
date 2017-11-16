@@ -42,3 +42,34 @@ bool Node::setPrevious(Node* n){
 	return true; 
 }
 
+string Node::toString()const{
+	string mess = "[Node: ";
+	if(this->m_value!=0){
+		mess+="[Value: " + this->m_value->toString() + "],";
+	}else{
+		mess+="[Value: Null],";
+	}
+	//check previous element
+	if(this->m_previous_element == 0){
+		mess+="[Previous: Previous node is null],";
+	}else{
+		if(this->m_previous_element->getValue() == 0){
+			mess+="[Previous: value is null],";
+		}else{
+			mess+="[Previous value: " + this->m_previous_element->getValue()->toString() + "],";
+		}
+	}
+	//check next value
+	if(this->m_next_element == 0){
+		mess+="[Next: node is null],";
+	}else{
+		if(this->m_next_element->getValue() == 0){
+			mess+="[Next: value is null],";
+		}else{
+			mess+="[Next value: " + this->m_next_element->getValue()->toString() + "],";
+		}
+	}
+	mess+="]";
+	return mess;
+}
+

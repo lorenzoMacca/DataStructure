@@ -22,6 +22,7 @@ class List{
 		Object* popFrom();
 		bool isEmpty()const;
 		Iterator* getIterator();
+		string toString()const;
 };
 
 #endif

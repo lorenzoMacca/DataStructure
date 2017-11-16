@@ -20,7 +20,7 @@ class Node{
 		Node* getPreviout()const;
 		bool setNext(Node*);
 		bool setPrevious(Node*);
-		void printAll()const;
+		string toString()const;
 };
 
 #endif
