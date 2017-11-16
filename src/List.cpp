@@ -51,3 +51,25 @@ bool List::pushFront(Object* o){
 Iterator* List::getIterator(){
 	return new Iterator(this->m_first_element);
 }
+
+bool List::isEmpty()const{
+	if(this->m_first_element == 0){
+		return true;
+	}
+	return false;
+}
+
+Object* List::popBack(){
+	if(this->isEmpty()){
+		return 0;
+	}
+	Object* valueToBeReturned=this->m_last_element->getValue();
+	this->m_last_element=this->m_last_element->getPreviout();
+	if(this->m_last_element!=0){
+		this->m_last_element->getNext()->setPrevious(0);
+		this->m_last_element->setNext(0);
+	}else{
+		this->m_first_element=0;
+	}
+	return valueToBeReturned;
+}

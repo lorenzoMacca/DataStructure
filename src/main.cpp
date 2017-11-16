@@ -20,6 +20,8 @@ int main(){
 	
 	List s1(&t1);
 	
+	s.popBack();
+	
 	//cout << s1.getFirstValue()->toString() << endl;
 	
 	//cout << s1.getValueLastElement()->toString() << endl;
@@ -29,6 +31,8 @@ int main(){
 	s1.pushBack(new TypeFoo("t3"));
 
 	s1.pushBack(new TypeFoo("t4"));
+	
+	s1.popBack();
 
 	Iterator* i = s1.getIterator();
 	while(i->hasNext()){

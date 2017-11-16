@@ -33,6 +33,7 @@
 
 # Temp files
 *~
+*.swp
 
 # Binary
 app
