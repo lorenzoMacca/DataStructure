@@ -19,7 +19,7 @@ class List{
 		bool pushBack(Object* t);
 		bool pushFront(Object* t);
 		Object* popBack();
-		Object* popFrom();
+		Object* popFront();
 		bool isEmpty()const;
 		Iterator* getIterator();
 		string toString()const;

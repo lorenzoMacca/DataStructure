@@ -74,6 +74,21 @@ Object* List::popBack(){
 	return valueToBeReturned;
 }
 
+Object* List::popFront(){
+	if(this->isEmpty()){
+		return 0;
+	}
+	Object* valueToBeReturned=this->m_first_element->getValue();
+	this->m_first_element=this->m_first_element->getNext();
+	if(this->m_first_element!=0){
+		this->m_first_element->getPreviout()->setNext(0);
+		this->m_first_element->setPrevious(0);
+	}else{
+		this->m_last_element=0;
+	}
+	return valueToBeReturned;
+}
+
 string List::toString()const{
 	if(this->isEmpty()){
 		return "[List: The List is empty]";

@@ -61,12 +61,12 @@ string Node::toString()const{
 	}
 	//check next value
 	if(this->m_next_element == 0){
-		mess+="[Next: node is null],";
+		mess+="[Next: node is null]";
 	}else{
 		if(this->m_next_element->getValue() == 0){
-			mess+="[Next: value is null],";
+			mess+="[Next: value is null]";
 		}else{
-			mess+="[Next value: " + this->m_next_element->getValue()->toString() + "],";
+			mess+="[Next value: " + this->m_next_element->getValue()->toString() + "]";
 		}
 	}
 	mess+="]";

@@ -29,10 +29,14 @@ int main(){
 	//cout << s1.getValueLastElement()->toString() << endl;
 	
 	s1.pushBack(new TypeFoo("t2"));
+	
+	s1.popFront();
+	s1.popFront();
 
 	s1.pushBack(new TypeFoo("t3"));
 
 	s1.pushBack(new TypeFoo("t4"));
+	
 	
 	s1.popBack();
 
