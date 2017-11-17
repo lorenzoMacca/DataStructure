@@ -44,7 +44,17 @@ bool List::pushBack(Object* o){
 }
 
 bool List::pushFront(Object* o){
-	//TODO: implement push front
+	if(o!=0){
+		Node* n = new Node(o);
+		n->setNext(this->m_first_element);
+		if(this->m_first_element!=0){
+			this->m_first_element->setPrevious(n);
+		}else{
+			this->m_last_element=n;
+		}
+		this->m_first_element=n;
+		return true;
+	}
 	return  false;
 }
 

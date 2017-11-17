@@ -22,7 +22,7 @@ int main(){
 	
 	List s1(&t1);
 	
-	s.popBack();
+	s1.popBack();
 	
 	//cout << s1.getFirstValue()->toString() << endl;
 	
@@ -40,6 +40,8 @@ int main(){
 	
 	s1.popBack();
 
+	s1.pushFront(new TypeFoo("t0"));
+	
 	Iterator* i = s1.getIterator();
 	while(i->hasNext()){
 		string tmp = i->getCurrentValue()->toString();
