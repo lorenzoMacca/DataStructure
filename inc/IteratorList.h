@@ -21,7 +21,7 @@ class IteratorList: public Iterator{
 		virtual IteratorList* operator--();
 		virtual IteratorList* operator--(int);
 		virtual Node* getNode()const;
-		virtual void goToNext();	
+		virtual void goToNext();
 };
 
 #endif

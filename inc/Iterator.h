@@ -14,7 +14,7 @@ class Iterator{
 		virtual Iterator* operator--() = 0;
 		virtual Iterator* operator--(int) = 0;
 		virtual Node* getNode()const = 0;
-		virtual void goToNext() = 0;	
+		virtual void goToNext() = 0;
 };
 
 #endif

@@ -115,3 +115,20 @@ string List::toString()const{
 	return mess;
 }
 
+Node* List::getFirstNode()const{
+	return this->m_first_element;
+}
+
+Node* List::getLastNode()const{
+	return this->m_last_element;
+}
+
+bool List::insert(Iterator* i, Node*n ){
+	//TODO: check if the iterator is compatible
+	if(n==0){
+		return false;
+	}else if( i==0){
+		return false;
+	}
+	return false;
+}

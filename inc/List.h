@@ -23,6 +23,9 @@ class List{
 		bool isEmpty()const;
 		Iterator* getIterator();
 		string toString()const;
+		Node* getFirstNode()const;
+		Node* getLastNode()const;
+		bool insert(Iterator*, Node*);
 };
 
 #endif
