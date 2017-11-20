@@ -46,8 +46,10 @@ int main(){
 	while(i->hasNext()){
 		string tmp = i->getCurrentValue()->toString();
 		cout << tmp << endl;
-		++(*i);
+		(*i)++;
 	}
+	
+	
 	
 	cout << endl << s1.toString() <<endl;
 	

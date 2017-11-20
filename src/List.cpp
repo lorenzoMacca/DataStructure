@@ -12,6 +12,7 @@ List::List(Object* o){
 
 List::~List(){
 	//TODO: implement distructor
+	
 }
 
 Object* List::getFirstValue()const{

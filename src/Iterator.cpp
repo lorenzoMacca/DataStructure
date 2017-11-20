@@ -24,6 +24,23 @@ Iterator* Iterator::operator++(){
 	return this;
 }
 
+Iterator* Iterator::operator++(int v){
+	Iterator* i = new Iterator(this->m_current_node);
+	this->m_current_node = this->m_current_node->getNext();
+	return i;
+}
+
+Iterator* Iterator::operator--(){
+	this->m_current_node = this->m_current_node->getPreviout();
+	return this;
+}
+
+Iterator* Iterator::operator--(int v){
+	Iterator* i = new Iterator(this->m_current_node);
+	this->m_current_node = this->m_current_node->getPreviout();
+	return i;
+}
+
 Node* Iterator::getNode()const{
 	return this->m_current_node;
 }

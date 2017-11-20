@@ -15,6 +15,9 @@ class Iterator{
 		Object* getCurrentValue()const;
 		bool hasNext()const;
 		Iterator* operator++();
+		Iterator* operator++(int);
+		Iterator* operator--();
+		Iterator* operator--(int);
 		Node* getNode()const;
 		void goToNext();	
 };
