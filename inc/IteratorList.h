@@ -3,8 +3,9 @@
 
 #include "../inc/Node.h"
 #include "../inc/Object.h"
+#include "../inc/Iterator.h"
 
-class IteratorList{
+class IteratorList: public Iterator{
 	
 	protected:
 		Node* m_current_node;
@@ -12,14 +13,15 @@ class IteratorList{
 	public:
 		IteratorList();
 		IteratorList(Node* root);
-		Object* getCurrentValue()const;
-		bool hasNext()const;
-		IteratorList* operator++();
-		IteratorList* operator++(int);
-		IteratorList* operator--();
-		IteratorList* operator--(int);
-		Node* getNode()const;
-		void goToNext();	
+		virtual ~IteratorList();
+		virtual Object* getCurrentValue()const;
+		virtual bool hasNext()const;
+		virtual IteratorList* operator++();
+		virtual IteratorList* operator++(int);
+		virtual IteratorList* operator--();
+		virtual IteratorList* operator--(int);
+		virtual Node* getNode()const;
+		virtual void goToNext();	
 };
 
 #endif

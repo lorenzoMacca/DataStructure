@@ -48,3 +48,7 @@ Node* IteratorList::getNode()const{
 void IteratorList::goToNext(){
 	this->m_current_node = this->m_current_node->getNext();
 }
+
+IteratorList::~IteratorList(){
+	// INFO: IteratorList class create nothing so nothing to do in this function
+}

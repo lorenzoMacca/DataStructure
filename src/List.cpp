@@ -59,7 +59,7 @@ bool List::pushFront(Object* o){
 	return  false;
 }
 
-IteratorList* List::getIterator(){
+Iterator* List::getIterator(){
 	return new IteratorList(this->m_first_element);
 }
 

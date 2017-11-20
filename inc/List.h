@@ -21,7 +21,7 @@ class List{
 		Object* popBack();
 		Object* popFront();
 		bool isEmpty()const;
-		IteratorList* getIterator();
+		Iterator* getIterator();
 		string toString()const;
 };
 

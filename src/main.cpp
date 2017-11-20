@@ -5,7 +5,7 @@ using namespace std;
 #include "../inc/Node.h"
 #include "../inc/List.h"
 #include "../inc/TypeFoo.h"
-#include "../inc/IteratorList.h"
+#include "../inc/Iterator.h"
 
 int main(){
 	string s4 ("A character sequence");  
@@ -42,7 +42,7 @@ int main(){
 
 	s1.pushFront(new TypeFoo("t0"));
 	
-	IteratorList* i = s1.getIterator();
+	Iterator* i = s1.getIterator();
 	while(i->hasNext()){
 		string tmp = i->getCurrentValue()->toString();
 		cout << tmp << endl;
