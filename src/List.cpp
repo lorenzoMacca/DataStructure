@@ -59,8 +59,8 @@ bool List::pushFront(Object* o){
 	return  false;
 }
 
-Iterator* List::getIterator(){
-	return new Iterator(this->m_first_element);
+IteratorList* List::getIterator(){
+	return new IteratorList(this->m_first_element);
 }
 
 bool List::isEmpty()const{
@@ -105,7 +105,7 @@ string List::toString()const{
 		return "[List: The List is empty]";
 	}
 	string mess = "[List: ";
-	Iterator* i = new Iterator(this->m_first_element);
+	IteratorList* i = new IteratorList(this->m_first_element);
 	while(i->hasNext()){
 		mess += i->getNode()->toString() + " - ";
 		++(*i);

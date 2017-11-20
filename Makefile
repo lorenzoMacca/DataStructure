@@ -8,7 +8,7 @@ INC = ./inc
 
 # list of the objects which should be compiled for app
 #
-OBJS = main.o Node.o List.o Iterator.o
+OBJS = main.o Node.o List.o IteratorList.o
 
 # list of the objects + folder obj which should be compiled for app
 #
@@ -30,7 +30,7 @@ $(OBJ)/main.o: src/main.cpp
 $(OBJ)/List.o: src/List.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(OBJ)/Iterator.o: src/Iterator.cpp
+$(OBJ)/IteratorList.o: src/IteratorList.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ)/Node.o: src/Node.cpp
