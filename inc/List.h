@@ -25,7 +25,7 @@ class List{
 		string toString()const;
 		Node* getFirstNode()const;
 		Node* getLastNode()const;
-		bool insert(Iterator*, Node*);
+		bool insertAfter(Iterator*, Object*);
 };
 
 #endif

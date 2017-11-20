@@ -104,10 +104,10 @@ string List::toString()const{
 	if(this->isEmpty()){
 		return "[List: The List is empty]";
 	}
-	string mess = "[List: ";
+	string mess = "[List: \n";
 	IteratorList* i = new IteratorList(this->m_first_element);
 	while(i->hasNext()){
-		mess += i->getNode()->toString() + " - ";
+		mess += i->getNode()->toString() + " - " + "\n";
 		++(*i);
 	}
 	mess += "]";
@@ -123,12 +123,19 @@ Node* List::getLastNode()const{
 	return this->m_last_element;
 }
 
-bool List::insert(Iterator* i, Node*n ){
+bool List::insertAfter(Iterator* i, Object* o ){
 	//TODO: check if the iterator is compatible
-	if(n==0){
+	if(o==0){
 		return false;
-	}else if( i==0){
+	}else if( i->getNode()==0){
 		return false;
+	}else if(this->isEmpty() || i->getNode()->getNext() == 0){
+		return this->pushBack(o);
 	}
-	return false;
+	Node* n = new Node(o);
+	n->setNext(i->getNode()->getNext());
+	n->setPrevious(i->getNode());
+	i->getNode()->getNext()->setPrevious(n);
+	i->getNode()->setNext(n);
+	return true;
 }
