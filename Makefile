@@ -8,7 +8,7 @@ INC = ./inc
 
 # list of the objects which should be compiled for app
 #
-OBJS = main.o Node.o List.o IteratorList.o
+OBJS = main.o Node.o List.o IteratorList.o Algorithms.o
 
 # list of the objects + folder obj which should be compiled for app
 #
@@ -25,6 +25,9 @@ $(PROG) : $(LIST_OBJS)
 		$(CC) $(LDFLAGS) -o $(BIN)/$(PROG) $(LIST_OBJS)
 
 $(OBJ)/main.o: src/main.cpp 
+	$(CC) $(CPPFLAGS) -c $< -o $@
+	
+$(OBJ)/Algorithms.o: src/Algorithms.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 $(OBJ)/List.o: src/List.cpp
