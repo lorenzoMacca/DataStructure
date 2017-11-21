@@ -1,6 +1,10 @@
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
 
-class Algorithms{};
+class Algorithms{
+	
+	public:
+
+};
 
 #endif

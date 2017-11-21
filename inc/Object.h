@@ -5,11 +5,13 @@
 #include <string>
 using namespace std;
 
-class Object{
+#include "../inc/Comparable.h"
+
+class Object: public Comparable{
 
 	public:
 		virtual string toString() = 0 ;
-
+		virtual int compareTo(Comparable*) = 0 ;
 };
 
 #endif

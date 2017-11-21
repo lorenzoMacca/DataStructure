@@ -3,6 +3,7 @@
 
 #include "../inc/Object.h"
 
+
 class TypeFoo: public Object{
 
 	private:
@@ -17,6 +18,8 @@ class TypeFoo: public Object{
 			string s = "Hi! I am a dummy " + this->name + " class";
 			return s;
 		};
+		
+		virtual int compareTo(Comparable* c){return 0;}
 };
 
 #endif
