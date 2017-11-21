@@ -28,7 +28,7 @@ Node* Node::getNext()const{
 	return this->m_next_element;
 }
 
-Node* Node::getPreviout()const{
+Node* Node::getPrevious()const{
 	return this->m_previous_element;
 }
 

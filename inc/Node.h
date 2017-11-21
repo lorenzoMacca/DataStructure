@@ -17,7 +17,7 @@ class Node{
 		Node(const Node& n);
 		Object* getValue()const;
 		Node* getNext()const;
-		Node* getPreviout()const;
+		Node* getPrevious()const;
 		bool setNext(Node*);
 		bool setPrevious(Node*);
 		string toString()const;

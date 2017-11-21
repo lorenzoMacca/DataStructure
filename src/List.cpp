@@ -75,7 +75,7 @@ Object* List::popBack(){
 		return 0;
 	}
 	Object* valueToBeReturned=this->m_last_element->getValue();
-	this->m_last_element=this->m_last_element->getPreviout();
+	this->m_last_element=this->m_last_element->getPrevious();
 	if(this->m_last_element!=0){
 		this->m_last_element->getNext()->setPrevious(0);
 		this->m_last_element->setNext(0);
@@ -92,7 +92,7 @@ Object* List::popFront(){
 	Object* valueToBeReturned=this->m_first_element->getValue();
 	this->m_first_element=this->m_first_element->getNext();
 	if(this->m_first_element!=0){
-		this->m_first_element->getPreviout()->setNext(0);
+		this->m_first_element->getPrevious()->setNext(0);
 		this->m_first_element->setPrevious(0);
 	}else{
 		this->m_last_element=0;
@@ -146,13 +146,13 @@ bool List::insertBefore(Iterator* i, Object* o ){
 		return false;
 	}else if( i->getNode()==0){
 		return false;
-	}else if(this->isEmpty() || i->getNode()->getPreviout() == 0){
+	}else if(this->isEmpty() || i->getNode()->getPrevious() == 0){
 		return this->pushFront(o);
 	}
 	Node* n = new Node(o);
 	n->setNext(i->getNode());
-	n->setPrevious(i->getNode()->getPreviout());
-	i->getNode()->getPreviout()->setNext(n);
+	n->setPrevious(i->getNode()->getPrevious());
+	i->getNode()->getPrevious()->setNext(n);
 	i->getNode()->setPrevious(n);
 	return true;
 }

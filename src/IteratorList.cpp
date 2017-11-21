@@ -31,13 +31,13 @@ IteratorList* IteratorList::operator++(int v){
 }
 
 IteratorList* IteratorList::operator--(){
-	this->m_current_node = this->m_current_node->getPreviout();
+	this->m_current_node = this->m_current_node->getPrevious();
 	return this;
 }
 
 IteratorList* IteratorList::operator--(int v){
 	IteratorList* i = new IteratorList(this->m_current_node);
-	this->m_current_node = this->m_current_node->getPreviout();
+	this->m_current_node = this->m_current_node->getPrevious();
 	return i;
 }
 
