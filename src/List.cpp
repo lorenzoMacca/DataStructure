@@ -139,3 +139,20 @@ bool List::insertAfter(Iterator* i, Object* o ){
 	i->getNode()->setNext(n);
 	return true;
 }
+
+bool List::insertBefore(Iterator* i, Object* o ){
+	//TODO: check if the iterator is compatible
+	if(o==0){
+		return false;
+	}else if( i->getNode()==0){
+		return false;
+	}else if(this->isEmpty() || i->getNode()->getPreviout() == 0){
+		return this->pushFront(o);
+	}
+	Node* n = new Node(o);
+	n->setNext(i->getNode());
+	n->setPrevious(i->getNode()->getPreviout());
+	i->getNode()->getPreviout()->setNext(n);
+	i->getNode()->setPrevious(n);
+	return true;
+}

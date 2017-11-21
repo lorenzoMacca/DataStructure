@@ -50,10 +50,9 @@ int main(){
 	}
 	
 	Iterator* i2 = s1.getIterator();
-	(*i2)++;
-	(*i2)++;
+	//(*i2)++;
 
-	s1.insertAfter(i2, new TypeFoo("t5"));
+	s1.insertBefore(i2, new TypeFoo("t5"));
 	
 	cout << endl << s1.toString() <<endl;
 	
