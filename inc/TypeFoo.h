@@ -6,11 +6,11 @@
 
 class TypeFoo: public Object{
 
-	private:
-		string name;
-
 	public:
-		TypeFoo(string name){
+		string name;
+		int value;
+
+		TypeFoo(string name, int value){
 			this->name=name;
 		}
 

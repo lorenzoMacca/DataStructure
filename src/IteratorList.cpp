@@ -52,3 +52,8 @@ void IteratorList::goToNext(){
 IteratorList::~IteratorList(){
 	// INFO: IteratorList class create nothing so nothing to do in this function
 }
+
+Iterator* IteratorList::operator=(const Iterator* i){
+	this->m_current_node = i->getNode();
+	return this;
+}

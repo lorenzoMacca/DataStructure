@@ -20,6 +20,7 @@ class IteratorList: public Iterator{
 		virtual IteratorList* operator++(int);
 		virtual IteratorList* operator--();
 		virtual IteratorList* operator--(int);
+		virtual Iterator* operator=(const Iterator*);
 		virtual Node* getNode()const;
 		virtual void goToNext();
 };

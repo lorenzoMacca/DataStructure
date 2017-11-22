@@ -27,6 +27,7 @@ class List{
 		Node* getLastNode()const;
 		bool insertAfter(Iterator*, Object*);
 		bool insertBefore(Iterator*, Object*);
+		void swap(Iterator*, Iterator*);
 };
 
 #endif
