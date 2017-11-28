@@ -24,6 +24,10 @@ Object* Node::getValue()const{
 	return this->m_value;
 }
 
+void Node::setValue(Object* o){
+	this->m_value=o;
+}
+
 Node* Node::getNext()const{
 	return this->m_next_element;
 }

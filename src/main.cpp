@@ -61,5 +61,25 @@ int main(){
 	
 	Algorithms* algorithms = new Algorithms();
 	
+	List s2;
+	
+	s2.pushBack(new TypeFoo("t5", 5));
+	s2.pushBack(new TypeFoo("t4", 4));
+	s2.pushBack(new TypeFoo("t3", 3));
+	s2.pushBack(new TypeFoo("t2", 2));
+	s2.pushBack(new TypeFoo("t1", 1));
+	
+	Iterator* i21 = s2.getIterator();
+	Iterator* i22 = s2.getIterator();
+	
+	(*i22)++;
+	(*i22)++;
+	
+	cout << endl << s2.toString() <<endl;
+	
+	s2.swap(i21, i22);
+	
+	cout << endl << s2.toString() <<endl;
+	
 	return 0;
 }

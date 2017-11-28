@@ -160,6 +160,8 @@ bool List::insertBefore(Iterator* i, Object* o ){
 void List::swap(Iterator* i1, Iterator* i2){
 	//TODO: check if the iterator is compatible
 	if(i1 != 0 && i2 != 0 && i1->getNode()!=0 && i2->getNode()!=0){
-		
+		Object* o = i1->getNode()->getValue();
+		i1->getNode()->setValue(i2->getNode()->getValue());
+		i2->getNode()->setValue(o);
 	}
 }

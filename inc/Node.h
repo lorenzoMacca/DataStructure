@@ -16,6 +16,7 @@ class Node{
 		~Node();
 		Node(const Node& n);
 		Object* getValue()const;
+		void setValue(Object*);
 		Node* getNext()const;
 		Node* getPrevious()const;
 		bool setNext(Node*);
