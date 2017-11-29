@@ -9,7 +9,7 @@ class Algorithms{
 		static const int ASC=0;
 		static const int DESC=1;
 		
-		void insertionSort(List*, int);
+		void insertionSort(List*, int mode = 0);
 
 };
 

@@ -19,7 +19,13 @@ class TypeFoo: public Object{
 			return s;
 		};
 		
-		virtual int compareTo(Comparable* c){return 0;}
+		virtual int compareTo(Object* o){
+			if(o == 0) return -2;
+			if(this == 0) return 0;
+			if(this->value == ((TypeFoo*)o)->value) return 0;
+			if(this->value > ((TypeFoo*)o)->value) return -1;
+			if(this->value < ((TypeFoo*)o)->value) return 1;
+		}
 };
 
 #endif

@@ -59,6 +59,8 @@ int main(){
 	
 	//**********************************************
 	
+	cout << "Check algorithms" << endl;
+	
 	Algorithms* algorithms = new Algorithms();
 	
 	List s2;
@@ -77,7 +79,9 @@ int main(){
 	
 	cout << endl << s2.toString() <<endl;
 	
-	s2.swap(i21, i22);
+	//s2.swap(i21, i22)
+	
+	algorithms->insertionSort(&s2);
 	
 	cout << endl << s2.toString() <<endl;
 	

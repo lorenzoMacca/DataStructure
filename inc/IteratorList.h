@@ -23,6 +23,7 @@ class IteratorList: public Iterator{
 		virtual Iterator* operator=(const Iterator*);
 		virtual Node* getNode()const;
 		virtual void goToNext();
+		virtual void setNode(Node* );
 };
 
 #endif
