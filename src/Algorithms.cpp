@@ -5,18 +5,25 @@ void Algorithms::insertionSort(List* l, int mode){
 	while(i->hasNext()){
 		Iterator* j = new IteratorList();
 		Object* key = i->getNode()->getValue();
-		j->setNode(i->getNode());
-		(*j)--;
+		cout << "checking:" << key->toString() << endl;
+		j->setNode(i->getNode()->getPrevious());
 		while(j->hasNext()){
-			int res = i->getNode()->getValue()->compareTo(j->getNode()->getValue());
+			int res = key->compareTo(j->getNode()->getValue());
+			//cout << i->getNode()->getValue()->toString() << " " << j->getNode()->getValue()->toString() <<endl;
 			if(res = -1){
 				i->getNode()->setValue(j->getNode()->getValue());
 			}else{
 				j->getNode()->setValue(key);
 				break;
 			}
+			if(j->getNode()->getPrevious() == 0){
+				j->getNode()->setValue(key);
+			}
+			cout << endl << l->toString() << endl;
 			(*j)--;
 		}
+		cout << "end while" << endl;
+		
 		(*i)++;
 	}
 	
