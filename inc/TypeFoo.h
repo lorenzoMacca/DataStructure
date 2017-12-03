@@ -12,6 +12,7 @@ class TypeFoo: public Object{
 
 		TypeFoo(string name, int value){
 			this->name=name;
+			this->value=value;
 		}
 
 		virtual string toString(){
@@ -20,6 +21,7 @@ class TypeFoo: public Object{
 		};
 		
 		virtual int compareTo(Object* o){
+			//cout << "Comparing: " << this->value << " with " << ((TypeFoo*)o)->value <<endl;
 			if(o == 0) return -2;
 			if(this == 0) return 0;
 			if(this->value == ((TypeFoo*)o)->value) return 0;

@@ -5,25 +5,23 @@ void Algorithms::insertionSort(List* l, int mode){
 	while(i->hasNext()){
 		Iterator* j = new IteratorList();
 		Object* key = i->getNode()->getValue();
-		cout << "checking:" << key->toString() << endl;
 		j->setNode(i->getNode()->getPrevious());
+		//cout << "Checking " << key->toString() << endl;
+		Iterator* rem = new IteratorList();
+		rem->setNode(j->getNode());
 		while(j->hasNext()){
-			int res = key->compareTo(j->getNode()->getValue());
-			//cout << i->getNode()->getValue()->toString() << " " << j->getNode()->getValue()->toString() <<endl;
-			if(res = -1){
-				i->getNode()->setValue(j->getNode()->getValue());
-			}else{
-				j->getNode()->setValue(key);
-				break;
+			rem->setNode(j->getNode());
+			int res = key->compareTo(j->getNode()->getValue());	
+			//cout << "Comparing: " << key->toString() << " with " << j->getNode()->getValue()->toString() << "res=" << res <<endl;
+			if(res==1){
+				//cout << "KK " <<  j->getNode()->getValue()->toString() << " > " << key->toString() <<endl;
+				j->getNode()->getNext()->setValue(j->getNode()->getValue());
 			}
-			if(j->getNode()->getPrevious() == 0){
-				j->getNode()->setValue(key);
-			}
-			cout << endl << l->toString() << endl;
 			(*j)--;
 		}
-		cout << "end while" << endl;
-		
+		if(rem->hasNext()){
+			rem->getNode()->setValue(key);
+		}
 		(*i)++;
 	}
 	
