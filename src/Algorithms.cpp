@@ -19,13 +19,13 @@ void Algorithms::insertionSort(List* l, int mode){
 		rem->setNode(j->getNode());
         bool keyIsShifted = false;
 		while(j->hasNext()){
-			rem->setNode(j->getNode());
 			int res = key->compareTo(j->getNode()->getValue());	
 			//cout << "Comparing: " << key->toString() << " with " << j->getNode()->getValue()->toString() << "res=" << res <<endl;
 			if(res==compare){
 				//cout << "KK " <<  j->getNode()->getValue()->toString() << " > " << key->toString() <<endl;
 				j->getNode()->getNext()->setValue(j->getNode()->getValue());
                 keyIsShifted = true;
+                rem->setNode(j->getNode());
 			}
 			(*j)--;
 		}
@@ -35,6 +35,7 @@ void Algorithms::insertionSort(List* l, int mode){
         delete (IteratorList*)rem;
         delete (IteratorList*)j;
 		(*i)++;
+        //cout << l->toString() << endl;
 	}
 	delete (IteratorList*)i;
 	

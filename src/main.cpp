@@ -65,11 +65,11 @@ int main(){
 	
 	List s2;
 	
+	s2.pushBack(new TypeFoo("t3", 3));
+	s2.pushBack(new TypeFoo("t1", 1));
 	s2.pushBack(new TypeFoo("t5", 5));
 	s2.pushBack(new TypeFoo("t4", 4));
-	s2.pushBack(new TypeFoo("t3", 3));
 	s2.pushBack(new TypeFoo("t2", 2));
-	s2.pushBack(new TypeFoo("t1", 1));
     
 	
 	/*Iterator* i21 = s2.getIterator();
