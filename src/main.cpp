@@ -70,6 +70,7 @@ int main(){
 	s2.pushBack(new TypeFoo("t3", 3));
 	s2.pushBack(new TypeFoo("t2", 2));
 	s2.pushBack(new TypeFoo("t1", 1));
+    
 	
 	/*Iterator* i21 = s2.getIterator();
 	Iterator* i22 = s2.getIterator();
@@ -81,7 +82,15 @@ int main(){
 	
 	//s2.swap(i21, i22)
 	
-	algorithms->insertionSort(&s2);
+	algorithms->insertionSort(&s2, Algorithms::ASC);
+	
+	cout << endl << s2.toString() <<endl;
+    
+    algorithms->insertionSort(&s2, Algorithms::DESC);
+    
+    cout << endl << s2.toString() <<endl;
+    
+    algorithms->insertionSort(&s2, Algorithms::ASC);
 	
 	cout << endl << s2.toString() <<endl;
 	

@@ -1,6 +1,14 @@
 #include "../inc/Algorithms.h"
 
 void Algorithms::insertionSort(List* l, int mode){
+    int compare = -2;
+    if(mode == Algorithms::ASC){
+        compare = 1;
+    }else if(mode == Algorithms::DESC){
+        compare = -1;
+    }else{
+        return;
+    }
 	Iterator* i = l->getIterator();
 	while(i->hasNext()){
 		Iterator* j = new IteratorList();
@@ -9,22 +17,25 @@ void Algorithms::insertionSort(List* l, int mode){
 		//cout << "Checking " << key->toString() << endl;
 		Iterator* rem = new IteratorList();
 		rem->setNode(j->getNode());
+        bool keyIsShifted = false;
 		while(j->hasNext()){
 			rem->setNode(j->getNode());
 			int res = key->compareTo(j->getNode()->getValue());	
 			//cout << "Comparing: " << key->toString() << " with " << j->getNode()->getValue()->toString() << "res=" << res <<endl;
-			if(res==1){
+			if(res==compare){
 				//cout << "KK " <<  j->getNode()->getValue()->toString() << " > " << key->toString() <<endl;
 				j->getNode()->getNext()->setValue(j->getNode()->getValue());
+                keyIsShifted = true;
 			}
 			(*j)--;
 		}
-		if(rem->hasNext()){
+		if(keyIsShifted && rem->hasNext()){
 			rem->getNode()->setValue(key);
 		}
+        delete (IteratorList*)rem;
+        delete (IteratorList*)j;
 		(*i)++;
 	}
-	
 	delete (IteratorList*)i;
 	
 }
