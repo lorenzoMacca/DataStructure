@@ -25,6 +25,6 @@ void Algorithms::insertionSort(List* l, int mode){
 		(*i)++;
 	}
 	
-	delete i;
+	delete (IteratorList*)i;
 	
 }
