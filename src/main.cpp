@@ -126,7 +126,9 @@ int main(){
     try{
         algorithms->isSorted(s4_ptr, 5);
     }catch(int i){
-        cout << "AHAHAHAHAH " << i  << endl;
+        if(i==Algorithms::INVALID_MODE){
+            cout << "the mode is invalid" << endl;
+        }
     }
     
     

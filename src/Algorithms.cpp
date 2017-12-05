@@ -1,13 +1,16 @@
 #include "../inc/Algorithms.h"
 
 void Algorithms::insertionSort(List* l, int mode){
+    if(l==0){
+        throw Algorithms::NULL_POINT;
+    }
     int compare = -2;
     if(mode == Algorithms::ASC){
         compare = 1;
     }else if(mode == Algorithms::DESC){
         compare = -1;
     }else{
-        return;
+        throw Algorithms::INVALID_MODE;
     }
 	Iterator* i = l->getIterator();
 	while(i->hasNext()){
@@ -44,7 +47,7 @@ void Algorithms::insertionSort(List* l, int mode){
 
 bool Algorithms::isSorted(List* l, int mode){
     if(l==0){
-        throw 42;
+        throw Algorithms::NULL_POINT;
     }
     int compare = -2;
     if(mode==Algorithms::ASC){
@@ -53,7 +56,7 @@ bool Algorithms::isSorted(List* l, int mode){
         compare=-1;
     }
     if(compare==-2){
-        throw 43;
+        throw Algorithms::INVALID_MODE;
     }
     Iterator* i = l->getIterator();
     while(i->hasNext()){
