@@ -40,3 +40,30 @@ void Algorithms::insertionSort(List* l, int mode){
 	delete (IteratorList*)i;
 	
 }
+
+
+bool Algorithms::isSorted(List* l, int mode){
+    if(l==0){
+        throw 42;
+    }
+    int compare = -2;
+    if(mode==Algorithms::ASC){
+        compare=1;
+    }else if(mode==Algorithms::DESC){
+        compare=-1;
+    }
+    if(compare==-2){
+        throw 43;
+    }
+    Iterator* i = l->getIterator();
+    while(i->hasNext()){
+        if(i->getNode() != 0 && i->getNode()->getNext() != 0){
+            int res = i->getNode()->getValue()->compareTo(i->getNode()->getNext()->getValue());
+            if(res != compare){
+                return false;
+            }
+        }
+        (*i)++;
+    }
+    return true;
+}

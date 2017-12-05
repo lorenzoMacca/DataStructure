@@ -93,6 +93,44 @@ int main(){
     algorithms->insertionSort(&s2, Algorithms::ASC);
 	
 	cout << endl << s2.toString() <<endl;
+    
+	//**********************************************
+	
+	cout << "Check algorithms isSorted" << endl;
+    
+    List s3;
+	
+	s3.pushBack(new TypeFoo("t3", 3));
+	s3.pushBack(new TypeFoo("t1", 1));
+	s3.pushBack(new TypeFoo("t5", 5));
+	s3.pushBack(new TypeFoo("t4", 4));
+	s3.pushBack(new TypeFoo("t2", 2));
+    
+    algorithms->insertionSort(&s3, Algorithms::ASC);
+    
+    if(algorithms->isSorted(&s3, Algorithms::ASC)){
+        cout << "List is sorted ASC" << endl;
+    }else{
+        cout << "List is NOT sorted ASC" << endl;
+    }
+    
+    algorithms->insertionSort(&s3, Algorithms::DESC);
+    if(algorithms->isSorted(&s3, Algorithms::DESC)){
+        cout << "List is sorted DESC" << endl;
+    }else{
+        cout << "List is NOT sorted DESC" << endl;
+    }
+    
+    List* s4_ptr=new List;
+
+    try{
+        algorithms->isSorted(s4_ptr, 5);
+    }catch(int i){
+        cout << "AHAHAHAHAH " << i  << endl;
+    }
+    
+    
+    
 	
 	return 0;
 }
