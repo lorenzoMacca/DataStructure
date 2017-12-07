@@ -70,3 +70,17 @@ bool Algorithms::isSorted(List* l, int mode){
     }
     return true;
 }
+
+void Algorithms::mergeSort(List* l, int mode){
+    if(l==0){
+        throw Algorithms::NULL_POINT;
+    }
+    int compare = -2;
+    if(mode == Algorithms::ASC){
+        compare = 1;
+    }else if(mode == Algorithms::DESC){
+        compare = -1;
+    }else{
+        throw Algorithms::INVALID_MODE;
+    }
+}

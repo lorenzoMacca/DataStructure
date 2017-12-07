@@ -3,11 +3,13 @@
 List::List(){
 	this->m_first_element=0;
 	this->m_last_element=0;
+    this->m_current_element_numbers = 0;
 }
 
 List::List(Object* o){
 	this->m_first_element=new Node(o);
 	this->m_last_element=this->m_first_element;
+    this->m_current_element_numbers=1;
 }
 
 List::~List(){
@@ -39,6 +41,7 @@ bool List::pushBack(Object* o){
 			this->m_first_element=n;
 		}
 		this->m_last_element=n;
+        this->m_current_element_numbers++;
 		return true;
 	}
 	return false;
@@ -54,6 +57,7 @@ bool List::pushFront(Object* o){
 			this->m_last_element=n;
 		}
 		this->m_first_element=n;
+        this->m_current_element_numbers++;
 		return true;
 	}
 	return  false;
@@ -82,6 +86,7 @@ Object* List::popBack(){
 	}else{
 		this->m_first_element=0;
 	}
+    this->m_current_element_numbers--;
 	return valueToBeReturned;
 }
 
@@ -97,6 +102,7 @@ Object* List::popFront(){
 	}else{
 		this->m_last_element=0;
 	}
+    this->m_current_element_numbers--;
 	return valueToBeReturned;
 }
 
@@ -137,6 +143,7 @@ bool List::insertAfter(Iterator* i, Object* o ){
 	n->setPrevious(i->getNode());
 	i->getNode()->getNext()->setPrevious(n);
 	i->getNode()->setNext(n);
+    this->m_current_element_numbers++;
 	return true;
 }
 
@@ -154,6 +161,7 @@ bool List::insertBefore(Iterator* i, Object* o ){
 	n->setPrevious(i->getNode()->getPrevious());
 	i->getNode()->getPrevious()->setNext(n);
 	i->getNode()->setPrevious(n);
+    this->m_current_element_numbers++;  
 	return true;
 }
 
@@ -164,4 +172,8 @@ void List::swap(Iterator* i1, Iterator* i2){
 		i1->getNode()->setValue(i2->getNode()->getValue());
 		i2->getNode()->setValue(o);
 	}
+}
+
+int List::size()const{
+    return this->m_current_element_numbers;
 }

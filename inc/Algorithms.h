@@ -14,6 +14,7 @@ class Algorithms{
 		
 		void insertionSort(List*, int mode = Algorithms::ASC);
         bool isSorted(List*, int mode = Algorithms::ASC);
+        void mergeSort(List*, int mode = Algorithms::ASC);
 
 };
 

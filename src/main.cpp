@@ -42,6 +42,8 @@ int main(){
 	s1.popBack();
 
 	s1.pushFront(new TypeFoo("t0", 0));
+    
+    
 	
 	Iterator* i = s1.getIterator();
 	while(i->hasNext()){
@@ -56,6 +58,8 @@ int main(){
 	s1.insertBefore(i2, new TypeFoo("t5", 5));
 	
 	cout << endl << s1.toString() <<endl;
+    
+    cout << "size s1: " << s1.size() << endl;
 	
 	//**********************************************
 	

@@ -9,6 +9,7 @@ class List{
 	protected:
 		Node* m_first_element;
 		Node* m_last_element;
+        int m_current_element_numbers;
 
 	public:
 		List();
@@ -28,6 +29,7 @@ class List{
 		bool insertAfter(Iterator*, Object*);
 		bool insertBefore(Iterator*, Object*);
 		void swap(Iterator*, Iterator*);
+        int size()const;
 };
 
 #endif
