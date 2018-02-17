@@ -20,7 +20,7 @@ class TypeFoo: public Object{
 			return s;
 		};
 		
-		virtual int compareTo(Object* o){
+		virtual int compareTo(Object* o)const{
 			//cout << "Comparing: " << this->value << " with " << ((TypeFoo*)o)->value <<endl;
 			if(o == 0) return -2;
 			if(this == o) return 0;

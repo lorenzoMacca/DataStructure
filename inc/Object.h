@@ -11,7 +11,7 @@ class Object{
 
 	public:
 		virtual string toString() = 0 ;
-		virtual int compareTo(Object*) = 0 ;
+		virtual int compareTo(Object*) const = 0 ;
 };
 
 #endif
