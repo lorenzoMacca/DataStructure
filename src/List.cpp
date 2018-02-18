@@ -63,7 +63,7 @@ bool List::pushFront(Object* o){
 	return  false;
 }
 
-Iterator* List::getIterator(){
+Iterator* List::getIterator()const{
 	return new IteratorList(this->m_first_element);
 }
 
@@ -176,4 +176,14 @@ void List::swap(Iterator* i1, Iterator* i2){
 
 int List::size()const{
     return this->m_current_element_numbers;
+}
+
+ostream& operator<<(ostream& os, const List& l){
+    Iterator* i = l.getIterator();
+    while(i->hasNext()){
+        string tmp = i->getCurrentValue()->toString();
+        os << tmp << endl;
+        (*i)++;
+    }
+    return os;
 }

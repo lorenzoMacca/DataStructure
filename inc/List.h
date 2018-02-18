@@ -22,7 +22,7 @@ class List{
 		Object* popBack();
 		Object* popFront();
 		bool isEmpty()const;
-		Iterator* getIterator();
+		Iterator* getIterator()const;
 		string toString()const;
 		Node* getFirstNode()const;
 		Node* getLastNode()const;
@@ -30,6 +30,7 @@ class List{
 		bool insertBefore(Iterator*, Object*);
 		void swap(Iterator*, Iterator*);
         int size()const;
+        friend ostream& operator<<(ostream&, const List&);
 };
 
 #endif

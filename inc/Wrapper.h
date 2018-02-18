@@ -6,7 +6,7 @@
 #include "Object.h"
 
 template <class T>
-class Wrapper : Object{
+class Wrapper : public Object{
     
     protected:
         T data;
@@ -37,7 +37,15 @@ string Wrapper<T>::toString(){
 }
 
 template <class T>
-int Wrapper<T>::compareTo(Object*) const{return 0;}
+int Wrapper<T>::compareTo(Object* o) const{
+    if(o == 0) return -2;
+    if(this == o) return 0;
+    if(this->data == ((Wrapper<T>*)o)->data ) return 0;
+    if(this->data > ((Wrapper<T>*)o)->data ) return -1;
+    if(this->data < ((Wrapper<T>*)o)->data ) return 1;
+    return -2;
+    
+}
 
 template <class T>
 Wrapper<T>& Wrapper<T>::operator=(T const& d){

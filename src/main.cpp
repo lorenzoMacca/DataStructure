@@ -56,12 +56,12 @@ int main(){
     
     
 	
-	Iterator* i = s1.getIterator();
+	/*Iterator* i = s1.getIterator();
 	while(i->hasNext()){
 		string tmp = i->getCurrentValue()->toString();
 		cout << tmp << endl;
 		(*i)++;
-	}
+	}*/
 	
 	Iterator* i2 = s1.getIterator();
 	//(*i2)++;
@@ -93,17 +93,17 @@ int main(){
 	(*i22)++;
 	(*i22)++;*/
 	
-	cout << endl << s2.toString() <<endl;
+	//cout << endl << s2.toString() <<endl;
 	
 	//s2.swap(i21, i22)
 	
 	algorithms->insertionSort(&s2, Algorithms::ASC);
 	
-	cout << endl << s2.toString() <<endl;
+	//cout << endl << s2.toString() <<endl;
     
     algorithms->insertionSort(&s2, Algorithms::DESC);
     
-    cout << endl << s2.toString() <<endl;
+    //cout << endl << s2.toString() <<endl;
     
     algorithms->insertionSort(&s2, Algorithms::ASC);
 	
@@ -146,8 +146,23 @@ int main(){
         }
     }
     
+    //**********************************************
     
+    cout << "Create list on a wrapper type" << endl;
     
+    List* s5_ptr = new List;
+    s5_ptr->pushBack(new Integer(5));
+    s5_ptr->pushBack(new Integer(4));
+    s5_ptr->pushBack(new Integer(3));
+    s5_ptr->pushBack(new Integer(2));
+    s5_ptr->pushBack(new Integer(1));
 	
+    cout << *s5_ptr << endl;
+    
+    algorithms->insertionSort(s5_ptr, Algorithms::ASC);
+    
+    cout << *s5_ptr << endl;
+    
+    
 	return 0;
 }
