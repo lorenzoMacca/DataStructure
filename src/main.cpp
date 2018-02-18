@@ -7,8 +7,19 @@ using namespace std;
 #include "../inc/TypeFoo.h"
 #include "../inc/Iterator.h"
 #include "../inc/Algorithms.h"
+#include "../inc/Wrapper.h"
 
 int main(){
+    
+    Wrapper<int> integerT;
+    Integer valInt;
+    Wrapper<char> chart;
+    String str("Hello Wrapper!");
+    cout << "Wrapper string " << str.toString()<<endl;
+    
+    Integer a(5);
+    cout << "Wrapper string " << a.toString()<<endl;
+    
 	string s4 ("A character sequence");  
 
 	Node n;

@@ -39,6 +39,7 @@ $(OBJ)/IteratorList.o: src/IteratorList.cpp
 $(OBJ)/Node.o: src/Node.cpp
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
+
 clean:
 		rm -drf $(BIN) $(OBJ) *.o $(INC)/*.gch *~
 		
