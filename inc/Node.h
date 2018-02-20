@@ -3,7 +3,7 @@
 
 #include "../inc/Object.h"
 
-class Node{
+class Node : public Object{
 
 	protected:
 		Object* m_value;
@@ -21,7 +21,11 @@ class Node{
 		Node* getPrevious()const;
 		bool setNext(Node*);
 		bool setPrevious(Node*);
-		string toString()const;
+		//string toString()const;
+    
+        //from Object
+        string toString() const;
+        int compareTo(Object*) const;
 };
 
 #endif

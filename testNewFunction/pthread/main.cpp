@@ -34,6 +34,8 @@ int main(){
     
     pthread_t my_thread[N];
     
+    
+    
     long id;
     for(id = 1; id <= N; id++) {
         int ret =  pthread_create(&my_thread[id], NULL, &worker_thread, (void*)id);

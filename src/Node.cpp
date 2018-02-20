@@ -77,3 +77,7 @@ string Node::toString()const{
 	return mess;
 }
 
+int Node::compareTo(Object* o) const{
+    return this->m_value->compareTo(((Node*)o)->getValue());
+}
+

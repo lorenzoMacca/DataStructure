@@ -14,7 +14,7 @@ class Wrapper : public Object{
     public:
         Wrapper();
         Wrapper(T const&);
-        virtual string toString();
+        virtual string toString()const;
         virtual int compareTo(Object*) const;
         Wrapper& operator=(T const&);
 };
@@ -29,7 +29,7 @@ data(d)
 {}
 
 template <class T>
-string Wrapper<T>::toString(){
+string Wrapper<T>::toString()const{
     /*stringstream used to convert type like int/char to string*/
     stringstream ss;
     ss << data;

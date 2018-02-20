@@ -15,7 +15,7 @@ class TypeFoo: public Object{
 			this->value=value;
 		}
 
-		virtual string toString(){
+		virtual string toString()const{
 			string s = "Hi! I am a dummy " + this->name + " class";
 			return s;
 		};
