@@ -163,6 +163,35 @@ int main(){
     
     cout << *s5_ptr << endl;
     
+    //**********************************************
+    
+    cout << "Test compare between two nodes" << endl;
+    
+    Node* a_node = new Node;
+    Node* b_node = new Node;
+    
+    int res = a_node->compareTo(b_node);
+    
+    cout << "res: " << res << endl;
+    
+    a_node->setValue(new Integer(1));
+    b_node->setValue(new Integer(1));
+    
+    res = a_node->compareTo(b_node);
+    
+    cout << "res: " << res << endl;
+    
+    b_node->setValue(new Integer(2));
+    
+    res = a_node->compareTo(b_node);
+    
+    cout << "res: " << res << endl;
+    
+    b_node->setValue(new Integer(0));
+    
+    res = a_node->compareTo(b_node);
+    
+    cout << "res: " << res << endl;
     
 	return 0;
 }

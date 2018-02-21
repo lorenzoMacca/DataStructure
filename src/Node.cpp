@@ -78,6 +78,8 @@ string Node::toString()const{
 }
 
 int Node::compareTo(Object* o) const{
+    if(o == 0 || this->m_value == 0 || ((Node*)o)->getValue() == 0)
+        return -2;
     return this->m_value->compareTo(((Node*)o)->getValue());
 }
 
