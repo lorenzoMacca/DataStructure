@@ -21,7 +21,6 @@ class Node : public Object{
 		Node* getPrevious()const;
 		bool setNext(Node*);
 		bool setPrevious(Node*);
-		//string toString()const;
     
         //from Object
         string toString() const;
