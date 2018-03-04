@@ -21,24 +21,32 @@ bool IteratorList::hasNext()const{
 }
 
 IteratorList* IteratorList::operator++(){
-	this->m_current_node = this->m_current_node->getNext();
+    if(m_current_node != 0){
+        this->m_current_node = this->m_current_node->getNext();
+    }
 	return this;
 }
 
 IteratorList* IteratorList::operator++(int v){
 	IteratorList* i = new IteratorList(this->m_current_node);
-	this->m_current_node = this->m_current_node->getNext();
+    if(m_current_node != 0){
+        this->m_current_node = this->m_current_node->getNext();
+    }
 	return i;
 }
 
 IteratorList* IteratorList::operator--(){
-	this->m_current_node = this->m_current_node->getPrevious();
+    if(m_current_node != 0){
+        this->m_current_node = this->m_current_node->getPrevious();
+    }
 	return this;
 }
 
 IteratorList* IteratorList::operator--(int v){
 	IteratorList* i = new IteratorList(this->m_current_node);
-	this->m_current_node = this->m_current_node->getPrevious();
+    if(m_current_node != 0){
+        this->m_current_node = this->m_current_node->getPrevious();
+    }
 	return i;
 }
 

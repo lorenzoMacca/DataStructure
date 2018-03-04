@@ -211,6 +211,13 @@ int main(){
     cout << (*(*i_s5_ptr)).toString() << endl;
     (*i_s5_ptr)++;
     cout << (*(*i_s5_ptr)).toString() << endl;
+    //(*i_s5_ptr)++;
+    (*i_s5_ptr)++;
+    (*i_s5_ptr)++;
+    ++(*i_s5_ptr);
+    ++(*i_s5_ptr);
+    (*i_s5_ptr)--;
+    --(*i_s5_ptr);
     
 	return 0;
 }
