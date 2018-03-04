@@ -24,6 +24,8 @@ class IteratorList: public Iterator{
 		virtual Node* getNode()const;
 		virtual void goToNext();
 		virtual void setNode(Node* );
+        virtual void reset();
+        virtual Object& operator*();
 };
 
 #endif

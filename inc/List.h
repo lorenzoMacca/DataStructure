@@ -5,7 +5,7 @@
 #include "../inc/Object.h"
 #include "../inc/IteratorList.h"
 
-class List{
+class List : public Object{
 	protected:
 		Node* m_first_element;
 		Node* m_last_element;
@@ -23,7 +23,6 @@ class List{
 		Object* popFront();
 		bool isEmpty()const;
 		Iterator* getIterator()const;
-		string toString()const;
 		Node* getFirstNode()const;
 		Node* getLastNode()const;
 		bool insertAfter(Iterator*, Object*);
@@ -31,6 +30,10 @@ class List{
 		void swap(Iterator*, Iterator*);
         int size()const;
         friend ostream& operator<<(ostream&, const List&);
+    
+        //from Object
+        string toString()const;
+        int compareTo(Object*) const;
 };
 
 #endif

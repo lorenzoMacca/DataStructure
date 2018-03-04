@@ -1,6 +1,5 @@
 clear
 make clean
-mkdir lib
-mkdir bin
 mkdir obj
-make
+mkdir lib
+make create_lib

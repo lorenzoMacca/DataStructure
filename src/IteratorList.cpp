@@ -61,3 +61,11 @@ Iterator* IteratorList::operator=(const Iterator* i){
 void IteratorList::setNode(Node* n){
 	this->m_current_node = n;
 }
+
+void IteratorList::reset(){
+    //TODO: 
+}
+
+Object& IteratorList::operator*(){
+    return *(this->m_current_node->getValue());
+}

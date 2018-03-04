@@ -187,3 +187,7 @@ ostream& operator<<(ostream& os, const List& l){
     }
     return os;
 }
+
+int List::compareTo(Object*) const{
+    return -2;
+}

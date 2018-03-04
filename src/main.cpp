@@ -2,12 +2,12 @@
 #include <string>
 using namespace std;
 
-#include "../inc/Node.h"
-#include "../inc/List.h"
-#include "../inc/TypeFoo.h"
-#include "../inc/Iterator.h"
-#include "../inc/Algorithms.h"
-#include "../inc/Wrapper.h"
+#include "Node.h"
+#include "List.h"
+#include "TypeFoo.h"
+#include "Iterator.h"
+#include "Algorithms.h"
+#include "Wrapper.h"
 
 int main(){
     
@@ -192,6 +192,18 @@ int main(){
     res = a_node->compareTo(b_node);
     
     cout << "res: " << res << endl;
+    
+    //**********************************************
+    
+    cout << "Test *operator in iterator" << endl;
+    
+    List* s6_ptr = new List;
+    s6_ptr->pushBack(new Char('A'));
+    s6_ptr->pushBack(new Char('B'));
+    
+    Iterator* i_s5_ptr = s6_ptr->getIterator();
+    
+    cout << (*(*i_s5_ptr)).toString() << endl;
     
 	return 0;
 }
