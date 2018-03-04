@@ -8,6 +8,7 @@
 class IteratorList: public Iterator{
 	
 	protected:
+        Node* m_root_node;
 		Node* m_current_node;
 	
 	public:

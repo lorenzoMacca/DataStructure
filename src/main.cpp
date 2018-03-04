@@ -204,6 +204,13 @@ int main(){
     Iterator* i_s5_ptr = s6_ptr->getIterator();
     
     cout << (*(*i_s5_ptr)).toString() << endl;
+    (*i_s5_ptr)++;
+    cout << (*(*i_s5_ptr)).toString() << endl;
+    (*i_s5_ptr)++;
+    i_s5_ptr->reset();
+    cout << (*(*i_s5_ptr)).toString() << endl;
+    (*i_s5_ptr)++;
+    cout << (*(*i_s5_ptr)).toString() << endl;
     
 	return 0;
 }

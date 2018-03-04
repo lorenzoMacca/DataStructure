@@ -5,6 +5,7 @@ IteratorList::IteratorList(){
 }
 
 IteratorList::IteratorList(Node* root){
+    this->m_root_node=root;
 	this->m_current_node=root;
 }
 
@@ -63,7 +64,7 @@ void IteratorList::setNode(Node* n){
 }
 
 void IteratorList::reset(){
-    //TODO: 
+    this->m_current_node=m_root_node;
 }
 
 Object& IteratorList::operator*(){
