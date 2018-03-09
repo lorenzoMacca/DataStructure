@@ -47,6 +47,30 @@ bool List::pushBack(Object* o){
 	return false;
 }
 
+void List::pushBack(List* l){
+    if(l != 0 && l->size() > 0 && this!=l){
+        if(this->size() == 0){
+            this->m_first_element = l->m_first_element;
+            this->m_last_element = l->m_last_element;
+            this->m_current_element_numbers = l->m_current_element_numbers;
+            //REMARK: The pointer l is passed as copy! if you do staff like this l=0 you will set to NULL just the copy of l!
+        }else{
+            Node* n = l->getFirstNode();
+            n->setPrevious(this->m_last_element);
+            if(this->m_last_element!=0){
+                this->m_last_element->setNext(n);
+            }else{
+                this->m_first_element=n;
+            }
+            this->m_last_element=n;
+            this->m_current_element_numbers++;
+        }
+        l->m_first_element = 0;
+        l->m_last_element = 0;
+        l->m_current_element_numbers = 0;
+    }
+}
+
 bool List::pushFront(Object* o){
 	if(o!=0){
 		Node* n = new Node(o);

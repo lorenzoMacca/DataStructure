@@ -30,6 +30,8 @@ class List : public Object{
 		void swap(Iterator*, Iterator*);
         int size()const;
         friend ostream& operator<<(ostream&, const List&);
+        void pushBack(List*);
+        void pushFront(List*);
     
         //from Object
         string toString()const;

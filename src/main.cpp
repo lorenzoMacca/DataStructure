@@ -219,5 +219,34 @@ int main(){
     (*i_s5_ptr)--;
     --(*i_s5_ptr);
     
+     //**********************************************
+    
+    cout << "testing push back list empty list" << endl;
+    List* s7_ptr = new List;
+    List* s8_ptr = new List;
+    s8_ptr->pushBack(new Char('A'));
+    s8_ptr->pushBack(new Char('B'));
+    s7_ptr->pushBack(s8_ptr);
+    cout << "LIST s7" << endl;
+    cout << *s7_ptr << endl;
+    s7_ptr->getFirstNode()->setValue(new Char('C'));
+    cout << "LIST s8" << endl;
+    cout << *s8_ptr << endl;
+    
+    cout << "testing push back list not empty list" << endl;
+    List* s9_ptr = new List;
+    s9_ptr->pushBack(new Char('A'));
+    s9_ptr->pushBack(new Char('B'));
+    List* s10_ptr = new List;
+    s10_ptr->pushBack(new Char('C'));
+    s10_ptr->pushBack(new Char('D'));
+    s9_ptr->pushBack(s10_ptr);
+    cout << "LIST s9" << endl;
+    cout << *s9_ptr << endl;
+    cout << "LIST s10" << endl;
+    cout << *s10_ptr << endl;
+    s9_ptr->pushBack(s9_ptr);
+    cout << "LIST s9" << endl;
+    cout << *s9_ptr << endl;
 	return 0;
 }
