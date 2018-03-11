@@ -239,3 +239,19 @@ ostream& operator<<(ostream& os, const List& l){
 int List::compareTo(Object*) const{
     return -2;
 }
+
+List* List::search(Object* o)const{
+    if(o == 0) return new List;
+    List* l = new List;
+    IteratorList* i = (IteratorList*)this->getIterator();
+    while (i->hasNext()) {
+        Node* n = i->getNode();
+        if(n->getValue()->compareTo(o) == 0){
+            l->pushBack(n);
+        }
+        (*i)++;
+    }
+    
+    return l;
+}
+

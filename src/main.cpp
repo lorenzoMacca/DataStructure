@@ -278,5 +278,13 @@ int main(){
     cout << "LIST s14" << endl;
     cout << *s14_ptr << endl;
     
+    List* s15_ptr = s14_ptr->search(new Integer(4));
+    cout << "LIST s15" << endl;
+    cout << *s15_ptr << endl;
+    
+    List* s16_ptr = s14_ptr->search(new Integer(8));
+    cout << "LIST s16" << endl;
+    cout << *s16_ptr << endl;
+    
 	return 0;
 }

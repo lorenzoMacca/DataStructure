@@ -32,6 +32,7 @@ class List : public Object{
         friend ostream& operator<<(ostream&, const List&);
         void pushBack(List*);
         void pushFront(List*);
+        List* search(Object*)const;
     
         //from Object
         string toString()const;
