@@ -245,8 +245,38 @@ int main(){
     cout << *s9_ptr << endl;
     cout << "LIST s10" << endl;
     cout << *s10_ptr << endl;
+    cout << s9_ptr->getFirstValue()->toString();
+    cout << s9_ptr->getValueLastElement()->toString() << endl;
     s9_ptr->pushBack(s9_ptr);
     cout << "LIST s9" << endl;
     cout << *s9_ptr << endl;
+    
+    cout << "testing push front list empty list" << endl;
+    List* s11_ptr = new List;
+    List* s12_ptr = new List;
+    s11_ptr->pushBack(new Char('A'));
+    s11_ptr->pushBack(new Char('B'));
+    s12_ptr->pushFront(s11_ptr);
+    cout << "LIST s11" << endl;
+    cout << *s11_ptr << endl;
+    cout << "LIST s12" << endl;
+    cout << *s12_ptr << endl;
+    
+    List s13;
+    s13.pushBack(new Integer(1));
+    s13.pushBack(new Integer(2));
+    s13.pushBack(new Integer(3));
+    s13.pushBack(new Integer(4));
+    s13.pushBack(new Integer(5));
+    List* s14_ptr = new List;
+    s14_ptr->pushFront(new Integer(-2));
+    s14_ptr->pushFront(new Integer(-1));
+    s14_ptr->pushFront(new Integer(0));
+    s14_ptr->pushFront(&s13);
+    cout << "LIST s13" << endl;
+    cout << s13 << endl;
+    cout << "LIST s14" << endl;
+    cout << *s14_ptr << endl;
+    
 	return 0;
 }
