@@ -1,9 +1,9 @@
 #ifndef IteratorList_H
 #define IteratorList_H
 
-#include "../inc/Node.h"
-#include "../inc/Object.h"
-#include "../inc/Iterator.h"
+#include "Node.h"
+#include "Object.h"
+#include "Iterator.h"
 
 class IteratorList: public Iterator{
 	

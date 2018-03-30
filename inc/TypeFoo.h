@@ -1,7 +1,7 @@
 #ifndef TYPE_FOO_H
 #define TYPE_FOO_H
 
-#include "../inc/Object.h"
+#include "Object.h"
 
 
 class TypeFoo: public Object{

@@ -1,7 +1,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "../inc/Object.h"
+#include "Object.h"
 
 class Node : public Object{
 

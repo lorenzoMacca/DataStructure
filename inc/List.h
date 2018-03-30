@@ -1,9 +1,9 @@
 #ifndef LIST_H
 #define LIST_H
 
-#include "../inc/Node.h"
-#include "../inc/Object.h"
-#include "../inc/IteratorList.h"
+#include "Node.h"
+#include "Object.h"
+#include "IteratorList.h"
 
 class List : public Object{
 	protected:
@@ -33,6 +33,10 @@ class List : public Object{
         void pushBack(List*);
         void pushFront(List*);
         List* search(Object*)const;
+    
+        //TO implement
+        bool contains(Object*)const;
+        List* subList(Iterator*, Iterator*)const;
     
         //from Object
         string toString()const;

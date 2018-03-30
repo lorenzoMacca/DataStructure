@@ -1,8 +1,8 @@
 #ifndef Iterator_H
 #define Iterator_H
 
-#include "../inc/Node.h"
-#include "../inc/Object.h"
+#include "Node.h"
+#include "Object.h"
 
 class Iterator{
 

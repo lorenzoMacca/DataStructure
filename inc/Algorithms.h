@@ -1,7 +1,7 @@
 #ifndef ALGORITHMS_H
 #define ALGORITHMS_H
 
-#include "../inc/List.h"
+#include "List.h"
 
 class Algorithms{
 	
