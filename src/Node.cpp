@@ -13,7 +13,7 @@ Node::Node(Object* o){
 }
 
 Node::~Node(){
-
+    delete this->m_value;
 }
 
 Node::Node(const Node& n){

@@ -14,7 +14,11 @@ List::List(Object* o){
 
 List::~List(){
 	//TODO: implement distructor
-	
+    Iterator* i = this->getIterator();
+    while(i->hasNext()){
+        delete i->getCurrentValue();
+        (*i)++;
+    }
 }
 
 Object* List::getFirstValue()const{

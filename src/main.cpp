@@ -11,6 +11,17 @@ using namespace std;
 
 int main(){
     
+    cout << "Destructor tests" << endl;
+    
+    {
+        List* list = new List();
+        list->pushBack(new TypeFoo("Foo1", 1));
+        list->pushBack(new Wrapper<int>(5));
+        delete list;
+    }
+    
+    
+    
     Wrapper<int> integerT;
     Integer valInt;
     Wrapper<char> chart;
@@ -285,6 +296,10 @@ int main(){
     List* s16_ptr = s14_ptr->search(new Integer(8));
     cout << "LIST s16" << endl;
     cout << *s16_ptr << endl;
+    
+    
+    
+    
     
 	return 0;
 }
